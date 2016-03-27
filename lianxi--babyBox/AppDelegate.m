@@ -16,7 +16,37 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    
+    NSArray *className = @[@"BB_LearnViewController",@"BB_StoryViewController",@"BB_MineViewController"];
+    NSMutableArray *controllers = [NSMutableArray array];
+    
+    for (int i=0; i<className.count; i++) {
+        UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:[[NSClassFromString(className[i]) alloc]init] ];
+        
+        [controllers addObject:navigationController];
+        
+    }
+    UITabBarController *tabBar = [[UITabBarController alloc]init];
+    tabBar.viewControllers = controllers;
+    
+    
+    NSArray *imageList = @[@"识",@"听",@"我"];
+    for (int i=0; i<className.count; i++) {
+        UIViewController *nv = tabBar.viewControllers[i];
+        nv.tabBarItem.title = imageList[i];
+        nv.tabBarItem.image = [UIImage imageNamed:imageList[i]];
+        
+        
+    }
+    tabBar.tabBar.tintColor = [UIColor redColor];
+    
+    self.window.rootViewController  = tabBar;
+    
+    
+    
+    
     return YES;
 }
 

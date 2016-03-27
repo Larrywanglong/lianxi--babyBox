@@ -1,0 +1,18 @@
+//
+//  BobyBox.pch
+//  BobyBox
+//
+//  Created by 王龙 on 15/12/9.
+//  Copyright © 2015年 王龙. All rights reserved.
+//
+
+#ifndef BobyBox_pch
+#define BobyBox_pch
+
+
+#define SCREEN_WIDTH   CGRectGetWidth([UIScreen mainScreen].bounds)
+#define SCREEN_HEIGHT CGRectGetHeight([UIScreen mainScreen].bounds)
+#define SCREEN_BOUNDS  [UIScreen mainScreen].bounds
+
+
+#endif /* BobyBox_pch */
